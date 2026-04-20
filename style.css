@@ -1,0 +1,567 @@
+/* 表单样式 */
+.fitness-form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.result-section {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: #e8f4fd;
+    border-radius: 10px;
+    border-left: 5px solid #667eea;
+}
+
+.personal-info,
+.fitness-plan,
+.nutrition-advice {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.personal-info h4,
+.fitness-plan h4,
+.nutrition-advice h4 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 0.5rem;
+}
+
+/* 个性化健身计划结果样式 */
+.plan-category {
+    margin-bottom: 1.5rem;
+}
+
+.plan-category h4 {
+    color: #e74c3c;
+    margin-bottom: 0.5rem;
+}
+
+.plan-details {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.plan-details ul {
+    margin-top: 0.5rem;
+    margin-left: 1.5rem;
+}
+
+.plan-details li {
+    margin-bottom: 0.3rem;
+}
+
+.calorie-info {
+    background: #fff3cd;
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid #ffc107;
+}
+
+.nutrition-breakdown {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.nutrient-item {
+    background: #d1ecf1;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.nutrient-item h5 {
+    color: #0c5460;
+    margin-bottom: 0.5rem;
+}
+
+.workout-schedule {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+}
+
+.workout-day {
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    background: white;
+    border-radius: 6px;
+    border-left: 4px solid #28a745;
+}
+
+.workout-day h5 {
+    color: #28a745;
+    margin-bottom: 0.5rem;
+}
+
+/* 饮食计划样式 */
+.meal-plans-section {
+    margin-top: 2rem;
+}
+
+.meal-plan {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-left: 5px solid #28a745;
+}
+
+.meal-plan h4 {
+    color: #28a745;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #28a745;
+    padding-bottom: 0.5rem;
+}
+
+.meal-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.meal-item {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 3px solid #28a745;
+}
+
+.meal-item h5 {
+    color: #28a745;
+    margin-bottom: 0.5rem;
+}
+
+.meal-item p {
+    margin: 0.3rem 0;
+}
+
+.meal-nutrition {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed #dee2e6;
+}
+
+.weekly-meal-summary {
+    background: #fff3cd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    border-left: 5px solid #ffc107;
+}
+
+.generate-meal-message {
+    text-align: center;
+    padding: 2rem;
+    background: #e9ecef;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.generate-meal-message p {
+    margin-bottom: 1.5rem;
+    color: #6c757d;
+}
+
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* 头部样式 */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* 主要内容区域 */
+main {
+    min-height: calc(100vh - 200px);
+}
+
+.section {
+    padding: 4rem 0;
+    background: white;
+    margin-bottom: 2px;
+}
+
+.section:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    color: #2c3e50;
+    position: relative;
+}
+
+.section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+/* 健身简介部分 */
+.benefits ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.benefits li {
+    background: #e8f4fd;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+/* 营养知识部分 */
+.nutrition-info {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.macro-nutrients {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.macro-item {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background: #f8f9fa;
+    border-left: 4px solid #28a745;
+}
+
+.macro-item h4 {
+    color: #28a745;
+    margin-bottom: 0.5rem;
+}
+
+.micro-nutrients {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.micro-nutrients li {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* 运动类型部分 */
+.exercise-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.exercise-type {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exercise-type:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.exercise-type h3 {
+    color: #e74c3c;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.exercise-type ul {
+    margin-top: 1rem;
+}
+
+.exercise-type li {
+    margin-bottom: 0.5rem;
+    padding: 0.3rem 0 0.3rem 1rem;
+    border-left: 3px solid #e74c3c;
+    background: #f8f9fa;
+    margin-left: 0.5rem;
+}
+
+/* 训练计划部分 */
+.plan-examples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.plan {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-top: 4px solid #ffc107;
+}
+
+.plan h3 {
+    color: #ffc107;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.plan ul {
+    margin-top: 1rem;
+}
+
+.plan li {
+    margin-bottom: 0.5rem;
+    padding: 0.3rem 0 0.3rem 1rem;
+    border-left: 3px solid #ffc107;
+    background: #fff3cd;
+    margin-left: 0.5rem;
+}
+
+/* 实用建议部分 */
+.tips-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.tip {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-left: 5px solid #17a2b8;
+}
+
+.tip h3 {
+    color: #17a2b8;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.tip ul {
+    margin-top: 1rem;
+}
+
+.tip li {
+    margin-bottom: 0.5rem;
+    padding: 0.2rem 0 0.2rem 1rem;
+    border-left: 2px solid #17a2b8;
+}
+
+/* 底部样式 */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 5px 0;
+    }
+
+    .section {
+        padding: 2rem 0;
+    }
+
+    .section h2 {
+        font-size: 1.8rem;
+    }
+
+    .nutrition-info {
+        grid-template-columns: 1fr;
+    }
+
+    .plan-examples {
+        grid-template-columns: 1fr;
+    }
+
+    .tips-list {
+        grid-template-columns: 1fr;
+    }
+
+    .exercise-types {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section > .container {
+    animation: fadeIn 0.6s ease-out;
+}

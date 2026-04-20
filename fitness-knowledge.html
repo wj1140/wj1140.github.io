@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>健身知识百科</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>健身知识百科</h1>
+            <nav>
+                <ul>
+                    <li><a href="#personal-form">个人计划</a></li>
+                    <li><a href="#nutrition-plans">饮食计划</a></li>
+                    <li><a href="#introduction">健身简介</a></li>
+                    <li><a href="#nutrition">营养知识</a></li>
+                    <li><a href="#exercises">运动类型</a></li>
+                    <li><a href="#plans">训练计划</a></li>
+                    <li><a href="#tips">实用建议</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="personal-form" class="section">
+            <div class="container">
+                <h2>个性化健身计划</h2>
+                <p>请输入您的身体数据，我们将为您生成专属的健身计划和营养建议</p>
+
+                <form id="fitnessForm" class="fitness-form">
+                    <div class="form-group">
+                        <label for="age">年龄:</label>
+                        <input type="number" id="age" name="age" min="15" max="80" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="gender">性别:</label>
+                            <select id="gender" name="gender" required>
+                                <option value="">请选择</option>
+                                <option value="male">男</option>
+                                <option value="female">女</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="height">身高 (cm):</label>
+                            <input type="number" id="height" name="height" min="100" max="250" step="0.1" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="weight">当前体重 (kg):</label>
+                            <input type="number" id="weight" name="weight" min="30" max="300" step="0.1" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="goalWeight">目标体重 (kg):</label>
+                            <input type="number" id="goalWeight" name="goalWeight" min="30" max="300" step="0.1" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="activityLevel">日常活动水平:</label>
+                        <select id="activityLevel" name="activityLevel" required>
+                            <option value="">请选择</option>
+                            <option value="sedentary">久坐（很少或不运动）</option>
+                            <option value="light">轻度活动（每周运动1-3天）</option>
+                            <option value="moderate">中度活动（每周运动3-5天）</option>
+                            <option value="active">高度活动（每周运动6-7天）</option>
+                            <option value="very_active">极高活动（体力劳动或每日高强度运动）</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fitnessGoal">健身目标:</label>
+                        <select id="fitnessGoal" name="fitnessGoal" required>
+                            <option value="">请选择</option>
+                            <option value="lose_weight">减脂</option>
+                            <option value="gain_muscle">增肌</option>
+                            <option value="maintain">维持现状</option>
+                            <option value="general_fitness">综合健身</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="healthCondition">健康状况:</label>
+                        <textarea id="healthCondition" name="healthCondition" placeholder="请列出任何医疗限制或健康问题..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary">生成我的健身计划</button>
+                </form>
+
+                <div id="resultSection" class="result-section" style="display:none;">
+                    <h3>您的个人健康数据</h3>
+                    <div id="personalInfo" class="personal-info"></div>
+                    <h3>为您定制的健身计划</h3>
+                    <div id="fitnessPlan" class="fitness-plan"></div>
+                    <h3>营养建议</h3>
+                    <div id="nutritionAdvice" class="nutrition-advice"></div>
+                    <button id="savePlanBtn" class="btn-secondary">保存计划</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="nutrition-plans" class="section">
+            <div class="container">
+                <h2>个性化饮食计划</h2>
+                <p>基于您的身体数据和健身目标，为您定制的每日饮食安排</p>
+
+                <div id="mealPlansSection" class="meal-plans-section" style="display:none;">
+                    <h3>早餐建议</h3>
+                    <div id="breakfastPlan" class="meal-plan"></div>
+
+                    <h3>上午加餐建议</h3>
+                    <div id="midMorningSnackPlan" class="meal-plan"></div>
+
+                    <h3>午餐建议</h3>
+                    <div id="lunchPlan" class="meal-plan"></div>
+
+                    <h3>下午加餐建议</h3>
+                    <div id="afternoonSnackPlan" class="meal-plan"></div>
+
+                    <h3>晚餐建议</h3>
+                    <div id="dinnerPlan" class="meal-plan"></div>
+
+                    <h3>晚间加餐建议</h3>
+                    <div id="eveningSnackPlan" class="meal-plan"></div>
+
+                    <div class="weekly-meal-summary">
+                        <h3>一周饮食概览</h3>
+                        <p>以上饮食计划可根据个人口味和当地食材进行调整，但请尽量保持营养均衡和热量控制。</p>
+                    </div>
+                </div>
+
+                <div id="generateMealPlanMessage" class="generate-meal-message">
+                    <p>请先填写上方的个人信息并生成健身计划，然后点击下方按钮获取您的个性化饮食计划。</p>
+                    <button id="generateMealPlanBtn" class="btn-primary" disabled>生成我的饮食计划</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="introduction" class="section">
+            <div class="container">
+                <h2>什么是健身？</h2>
+                <p>健身是一种通过系统性锻炼来增强体质、改善体型、提升健康水平的生活方式。它不仅能帮助我们塑造理想的身材，还能提高心肺功能、增强肌肉力量、改善身体机能。</p>
+                <div class="benefits">
+                    <h3>健身的好处</h3>
+                    <ul>
+                        <li>增强肌肉力量和耐力</li>
+                        <li>改善心血管健康</li>
+                        <li>提高新陈代谢率</li>
+                        <li>增强骨密度</li>
+                        <li>改善睡眠质量</li>
+                        <li>减轻压力，提升心理健康</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="nutrition" class="section">
+            <div class="container">
+                <h2>健身营养知识</h2>
+                <p>合理的营养搭配是健身成功的关键因素之一。正确的饮食可以帮助你更快地达到目标，并支持身体恢复。</p>
+
+                <div class="nutrition-info">
+                    <div class="macro-nutrients">
+                        <h3>宏量营养素</h3>
+                        <div class="macro-item">
+                            <h4>蛋白质</h4>
+                            <p>作用：修复和构建肌肉组织</p>
+                            <p>推荐摄入量：每公斤体重1.6-2.2克</p>
+                            <p>来源：鸡胸肉、鱼、蛋、豆类、乳制品</p>
+                        </div>
+                        <div class="macro-item">
+                            <h4>碳水化合物</h4>
+                            <p>作用：提供能量，支持高强度训练</p>
+                            <p>推荐摄入量：根据活动水平调整</p>
+                            <p>来源：燕麦、糙米、红薯、水果、蔬菜</p>
+                        </div>
+                        <div class="macro-item">
+                            <h4>脂肪</h4>
+                            <p>作用：激素合成，细胞膜维护</p>
+                            <p>推荐摄入量：总热量的20-35%</p>
+                            <p>来源：坚果、橄榄油、牛油果、鱼类</p>
+                        </div>
+                    </div>
+
+                    <div class="micro-nutrients">
+                        <h3>微量营养素</h3>
+                        <ul>
+                            <li>维生素D：促进钙吸收，增强骨骼健康</li>
+                            <li>维生素C：抗氧化，支持免疫系统</li>
+                            <li>铁：促进氧气运输</li>
+                            <li>钙：维持骨骼健康</li>
+                            <li>镁：参与肌肉收缩和神经传导</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="exercises" class="section">
+            <div class="container">
+                <h2>主要运动类型</h2>
+                <div class="exercise-types">
+                    <div class="exercise-type">
+                        <h3>有氧运动</h3>
+                        <p>有氧运动主要提高心肺功能和燃烧脂肪。</p>
+                        <ul>
+                            <li>跑步</li>
+                            <li>游泳</li>
+                            <li>骑自行车</li>
+                            <li>跳绳</li>
+                            <li>椭圆机训练</li>
+                        </ul>
+                    </div>
+                    <div class="exercise-type">
+                        <h3>无氧运动（力量训练）</h3>
+                        <p>力量训练主要增强肌肉力量和体积，提高基础代谢率。</p>
+                        <ul>
+                            <li>深蹲</li>
+                            <li>卧推</li>
+                            <li>硬拉</li>
+                            <li>引体向上</li>
+                            <li>肩部推举</li>
+                        </ul>
+                    </div>
+                    <div class="exercise-type">
+                        <h3>柔韧性训练</h3>
+                        <p>提高关节活动度，预防运动损伤。</p>
+                        <ul>
+                            <li>瑜伽</li>
+                            <li>普拉提</li>
+                            <li>静态拉伸</li>
+                            <li>动态热身</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="plans" class="section">
+            <div class="container">
+                <h2>健身训练计划示例</h2>
+                <div class="plan-examples">
+                    <div class="plan">
+                        <h3>初学者全身训练计划（每周3次）</h3>
+                        <ul>
+                            <li>深蹲：3组×10-12次</li>
+                            <li>俯卧撑：3组×8-12次</li>
+                            <li>哑铃划船：3组×10-12次</li>
+                            <li>平板支撑：3组×30-60秒</li>
+                            <li>仰卧起坐：3组×15-20次</li>
+                        </ul>
+                    </div>
+                    <div class="plan">
+                        <h3>进阶分割训练计划（每周5-6次）</h3>
+                        <ul>
+                            <li>胸部+三头肌日</li>
+                            <li>背部+二头肌日</li>
+                            <li>腿部日</li>
+                            <li>肩部日</li>
+                            <li>有氧+核心日</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tips" class="section">
+            <div class="container">
+                <h2>健身实用建议</h2>
+                <div class="tips-list">
+                    <div class="tip">
+                        <h3>制定明确目标</h3>
+                        <p>设定具体、可衡量、可实现、相关性强、有时限的目标（SMART原则），比如"在3个月内减重5公斤"或"增加胸围2厘米"。</p>
+                    </div>
+                    <div class="tip">
+                        <h3>保持一致性</h3>
+                        <p>坚持比强度更重要。建立固定的锻炼时间表，让健身成为日常生活的一部分。</p>
+                    </div>
+                    <div class="tip">
+                        <h3>合理休息</h3>
+                        <p>充足的休息对肌肉恢复和生长至关重要。确保每晚7-9小时的优质睡眠。</p>
+                    </div>
+                    <div class="tip">
+                        <h3>渐进式超负荷</h3>
+                        <p>逐步增加训练重量、次数或训练频率，让身体不断适应新的挑战。</p>
+                    </div>
+                    <div class="tip">
+                        <h3>保持水分</h3>
+                        <p>运动前、中、后都要及时补水。一般建议每天饮水2-3升，运动时适量增加。</p>
+                    </div>
+                    <div class="tip">
+                        <h3>避免常见错误</h3>
+                        <ul>
+                            <li>忽视热身和拉伸</li>
+                            <li>过度训练</li>
+                            <li>忽视营养</li>
+                            <li>追求快速效果</li>
+                            <li>动作不规范</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 健身知识百科. 传播科学健身理念，助您拥有健康体魄.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
